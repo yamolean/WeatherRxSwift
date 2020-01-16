@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		1869AF0723D02BB0005F35B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1869AF0523D02BB0005F35B3 /* Main.storyboard */; };
 		1869AF0923D02BB4005F35B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1869AF0823D02BB4005F35B3 /* Assets.xcassets */; };
 		1869AF0C23D02BB4005F35B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1869AF0A23D02BB4005F35B3 /* LaunchScreen.storyboard */; };
+		1869AF1423D02E76005F35B3 /* WheatherResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869AF1323D02E76005F35B3 /* WheatherResult.swift */; };
 		B6AEF4AD86E9B190F4BAEF50 /* Pods_weatherAPP_RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638B42DC0D25E6793BD97264 /* Pods_weatherAPP_RxSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		1869AF0823D02BB4005F35B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1869AF0B23D02BB4005F35B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1869AF0D23D02BB4005F35B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1869AF1323D02E76005F35B3 /* WheatherResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheatherResult.swift; sourceTree = "<group>"; };
 		280D185B289C19ADEA948E81 /* Pods-weatherAPP RxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherAPP RxSwift.release.xcconfig"; path = "Target Support Files/Pods-weatherAPP RxSwift/Pods-weatherAPP RxSwift.release.xcconfig"; sourceTree = "<group>"; };
 		638B42DC0D25E6793BD97264 /* Pods_weatherAPP_RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weatherAPP_RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E5FAE461CFDF2152C8A1171 /* Pods-weatherAPP RxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherAPP RxSwift.debug.xcconfig"; path = "Target Support Files/Pods-weatherAPP RxSwift/Pods-weatherAPP RxSwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				1869AEFF23D02BB0005F35B3 /* AppDelegate.swift */,
 				1869AF0123D02BB0005F35B3 /* SceneDelegate.swift */,
 				1869AF0323D02BB0005F35B3 /* ViewController.swift */,
+				1869AF1523D03300005F35B3 /* Model */,
 				1869AF0523D02BB0005F35B3 /* Main.storyboard */,
 				1869AF0823D02BB4005F35B3 /* Assets.xcassets */,
 				1869AF0A23D02BB4005F35B3 /* LaunchScreen.storyboard */,
@@ -82,13 +85,20 @@
 			path = "weatherAPP RxSwift";
 			sourceTree = "<group>";
 		};
+		1869AF1523D03300005F35B3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1869AF1323D02E76005F35B3 /* WheatherResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		662229668E1FB6E9D938B709 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				6E5FAE461CFDF2152C8A1171 /* Pods-weatherAPP RxSwift.debug.xcconfig */,
 				280D185B289C19ADEA948E81 /* Pods-weatherAPP RxSwift.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1869AF0423D02BB0005F35B3 /* ViewController.swift in Sources */,
+				1869AF1423D02E76005F35B3 /* WheatherResult.swift in Sources */,
 				1869AF0023D02BB0005F35B3 /* AppDelegate.swift in Sources */,
 				1869AF0223D02BB0005F35B3 /* SceneDelegate.swift in Sources */,
 			);

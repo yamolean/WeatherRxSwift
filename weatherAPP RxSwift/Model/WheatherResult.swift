@@ -49,13 +49,19 @@
 //    "cod": 200
 //}
 
-import UIKit
+import Foundation
 
-struct WheatherResult: Decodable {
-    let main: Wheather
+struct WeatherResult: Decodable {
+    let main: Weather
 }
 
-struct Wheather {
+extension WeatherResult {
+    static var empty: WeatherResult {
+        return WeatherResult(main: Weather(temp: 0.0 ,humidity: 0.0))
+    }
+}
+
+struct Weather: Decodable {
     let temp: Double
     let humidity: Double
 }

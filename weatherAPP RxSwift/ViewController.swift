@@ -56,17 +56,23 @@ final class ViewController: UIViewController {
             //メインスレッドで動く
             .observeOn(MainScheduler.instance)
             //errorが流れるとerrorを引数で渡した値のnextイベントに変換,completeを自動で流し,Observableを終了
-            //.asDriver(onErrorJustReturn: WeatherResult.empty)
-            .catchErrorJustReturn(WeatherResult.empty)
+            //大幅削除2で削除
+            //.catchErrorJustReturn(WeatherResult.empty)
+        
+        //エラー無視
+        .asDriver(onErrorJustReturn: WeatherResult.empty)
         
         //searchはWeatherResult型,mapで変換して,bindでviewに反映
         //大幅削除1で追加
+        //大幅削除2で削除
         search.map { "気温\($0.main.temp)度" }
-            .bind(to: self.temperatureLabel.rx.text)
+//            .bind(to: self.temperatureLabel.rx.text)
+            .drive(self.temperatureLabel.rx.text)
             .disposed(by: disposeBag)
-        
+
         search.map { "湿度\($0.main.humidity)度" }
-            .bind(to: self.humidityLabel.rx.text)
+//            .bind(to: self.humidityLabel.rx.text)
+            .drive(self.humidityLabel.rx.text)
             .disposed(by: disposeBag)
         
         //大幅削除1

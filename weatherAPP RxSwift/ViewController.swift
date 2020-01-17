@@ -55,12 +55,16 @@ final class ViewController: UIViewController {
         let search = URLRequest.load(resource: resource)
             //メインスレッドで動く
             .observeOn(MainScheduler.instance)
+            .retry(3)
             //errorが流れるとerrorを引数で渡した値のnextイベントに変換,completeを自動で流し,Observableを終了
             //大幅削除2で削除
             //.catchErrorJustReturn(WeatherResult.empty)
         
         //エラー無視
-        .asDriver(onErrorJustReturn: WeatherResult.empty)
+        .catchError { error in
+            print(error.localizedDescription)
+            return Observable.just(WeatherResult.empty)
+        }.asDriver(onErrorJustReturn: WeatherResult.empty)
         
         //searchはWeatherResult型,mapで変換して,bindでviewに反映
         //大幅削除1で追加
